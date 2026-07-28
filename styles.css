@@ -1609,3 +1609,108 @@ h1 em {
 .instagram-link{font-weight:700;color:var(--brown)}
 .footer-social{margin:10px 0 24px}
 .footer-social a{color:rgba(255,255,255,.8)}
+
+
+/* Verze 1.1 – úpravy dle připomínek Daniely */
+.hero-media {
+  overflow: hidden;
+  border-radius: 44px 44px 180px 44px;
+}
+
+.hero-media img {
+  border-radius: inherit;
+}
+
+.hero-badge,
+.badge-number {
+  display: none !important;
+}
+
+.qualification-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.qualification-card {
+  min-height: 150px;
+  padding: 24px 26px;
+  justify-content: center;
+  background: rgba(255,255,255,.36);
+  border-radius: 22px;
+}
+
+.qualification-card > span {
+  display: none;
+}
+
+.qualification-card h3 {
+  font-size: 1.35rem;
+  margin-bottom: 6px;
+}
+
+.qualification-card p {
+  font-size: .88rem;
+}
+
+.price-panel-heading {
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.price-index {
+  display: none;
+}
+
+.price-panel-dark {
+  background: var(--brown);
+  color: white;
+}
+
+.price-panel-dark .price-kicker {
+  color: var(--sand);
+}
+
+.price-panel-dark .price-items,
+.price-panel-dark .price-item {
+  border-color: rgba(255,255,255,.13);
+}
+
+.price-panel-dark .price-item span,
+.price-panel-dark .price-panel-note {
+  color: rgba(255,255,255,.62);
+}
+
+.price-image-block,
+.price-lightbox {
+  display: none !important;
+}
+
+@media (max-width: 640px) {
+  .header {
+    height: 82px;
+  }
+
+  .header.scrolled {
+    height: 72px;
+  }
+
+  .brand-signature {
+    font-size: 3rem;
+  }
+
+  .brand-subtitle {
+    font-size: .54rem;
+  }
+
+  .hero {
+    padding-top: 118px;
+  }
+
+  .qualification-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .qualification-card {
+    min-height: 132px;
+  }
+}
