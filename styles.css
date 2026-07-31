@@ -1611,106 +1611,47 @@ h1 em {
 .footer-social a{color:rgba(255,255,255,.8)}
 
 
-/* Verze 1.1 – úpravy dle připomínek Daniely */
-.hero-media {
-  overflow: hidden;
-  border-radius: 44px 44px 180px 44px;
+/* V1.2 – úpravy podle připomínek Daniely */
+h1,h2{font-family:"DM Sans",sans-serif;font-weight:600;letter-spacing:-.055em}
+h1 em{font-family:"Playfair Display",serif;font-weight:500}
+.hero-media{overflow:hidden;border-radius:44px 44px 180px 44px}
+.hero-media img{border-radius:inherit}.hero-badge,.badge-number{display:none!important}
+.service-card{min-height:185px;justify-content:flex-end}.service-card>span{display:none}
+
+.nurse-section{display:grid;grid-template-columns:1fr .92fr;gap:80px;align-items:center}
+.nurse-copy h2{margin:0;font-size:clamp(3rem,5.5vw,5.7rem)}
+.nurse-copy>p{color:var(--muted);font-size:1.04rem}
+.nurse-points{margin-top:30px;display:grid;gap:10px}
+.nurse-points span{position:relative;padding:14px 18px 14px 45px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.34);font-weight:600}
+.nurse-points span:before{content:"✓";position:absolute;left:18px;color:var(--taupe)}
+.nurse-media{min-height:650px;position:relative}
+.nurse-media img{width:100%;height:650px;object-fit:cover;object-position:center 20%;border-radius:40px 180px 40px 40px;box-shadow:var(--shadow)}
+.nurse-note{position:absolute;left:-35px;bottom:36px;max-width:280px;padding:20px 23px;display:grid;border:1px solid var(--line);border-radius:20px;background:var(--paper);box-shadow:var(--shadow)}
+.nurse-note span{margin-top:4px;color:var(--muted);font-size:.84rem}
+
+.qualification-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.qualification-card{min-height:150px;padding:24px 26px;justify-content:center;border-radius:22px;background:rgba(255,255,255,.36)}
+.qualification-card>span{display:none}.qualification-card h3{margin-bottom:6px;font-size:1.35rem}.qualification-card p{font-size:.88rem}
+
+.price-panel-heading{grid-template-columns:1fr;gap:0}.price-index{display:none}
+.price-panel-dark{background:var(--brown);color:#fff}
+.price-panel-dark .price-kicker{color:var(--sand)}
+.price-panel-dark .price-items,.price-panel-dark .price-item{border-color:rgba(255,255,255,.13)}
+.price-panel-dark .price-item span,.price-panel-dark .price-panel-note{color:rgba(255,255,255,.62)}
+.price-image-block,.price-lightbox{display:none!important}
+
+.nutrition-gallery{grid-template-columns:1.1fr .9fr;grid-template-rows:repeat(2,minmax(220px,1fr))}
+.nutrition-gallery img{min-height:0}.nutrition-gallery img:first-child{grid-row:1/3}
+
+@media(max-width:980px){
+.nurse-section{grid-template-columns:1fr;gap:45px}.nurse-media{min-height:580px}.nurse-media img{height:580px}.nurse-note{left:20px}
 }
-
-.hero-media img {
-  border-radius: inherit;
-}
-
-.hero-badge,
-.badge-number {
-  display: none !important;
-}
-
-.qualification-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-}
-
-.qualification-card {
-  min-height: 150px;
-  padding: 24px 26px;
-  justify-content: center;
-  background: rgba(255,255,255,.36);
-  border-radius: 22px;
-}
-
-.qualification-card > span {
-  display: none;
-}
-
-.qualification-card h3 {
-  font-size: 1.35rem;
-  margin-bottom: 6px;
-}
-
-.qualification-card p {
-  font-size: .88rem;
-}
-
-.price-panel-heading {
-  grid-template-columns: 1fr;
-  gap: 0;
-}
-
-.price-index {
-  display: none;
-}
-
-.price-panel-dark {
-  background: var(--brown);
-  color: white;
-}
-
-.price-panel-dark .price-kicker {
-  color: var(--sand);
-}
-
-.price-panel-dark .price-items,
-.price-panel-dark .price-item {
-  border-color: rgba(255,255,255,.13);
-}
-
-.price-panel-dark .price-item span,
-.price-panel-dark .price-panel-note {
-  color: rgba(255,255,255,.62);
-}
-
-.price-image-block,
-.price-lightbox {
-  display: none !important;
-}
-
-@media (max-width: 640px) {
-  .header {
-    height: 82px;
-  }
-
-  .header.scrolled {
-    height: 72px;
-  }
-
-  .brand-signature {
-    font-size: 3rem;
-  }
-
-  .brand-subtitle {
-    font-size: .54rem;
-  }
-
-  .hero {
-    padding-top: 118px;
-  }
-
-  .qualification-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .qualification-card {
-    min-height: 132px;
-  }
+@media(max-width:640px){
+.header{height:82px}.header.scrolled{height:72px}.brand-signature{font-size:3rem}.brand-subtitle{font-size:.54rem}
+.hero{padding-top:120px}h1{font-size:clamp(3.25rem,15vw,4.8rem)}
+.service-card{min-height:150px}.qualification-grid{grid-template-columns:1fr}.qualification-card{min-height:130px}
+.nurse-media,.nurse-media img{min-height:500px;height:500px}.nurse-media img{border-radius:28px 100px 28px 28px}
+.nurse-note{left:12px;right:12px;bottom:18px;max-width:none}
+.nutrition-gallery{grid-template-columns:1fr 1fr;grid-template-rows:285px 205px}
+.nutrition-gallery img:first-child{grid-column:1/-1;grid-row:auto}
 }

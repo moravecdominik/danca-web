@@ -70,34 +70,6 @@ document.addEventListener("keydown", (event) => {
 });
 
 
-// Celý ceník ve fullscreen náhledu
-const priceImageButton = document.querySelector(".price-image-button");
-const priceLightbox = document.querySelector(".price-lightbox");
-const priceLightboxClose = document.querySelector(".price-lightbox-close");
-
-function openPriceLightbox() {
-  priceLightbox?.classList.add("open");
-  priceLightbox?.setAttribute("aria-hidden", "false");
-  document.body.classList.add("menu-open");
-}
-
-function closePriceLightbox() {
-  priceLightbox?.classList.remove("open");
-  priceLightbox?.setAttribute("aria-hidden", "true");
-  document.body.classList.remove("menu-open");
-}
-
-priceImageButton?.addEventListener("click", openPriceLightbox);
-priceLightboxClose?.addEventListener("click", closePriceLightbox);
-
-priceLightbox?.addEventListener("click", (event) => {
-  if (event.target === priceLightbox) closePriceLightbox();
-});
-
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") closePriceLightbox();
-});
-
 
 // V4 – fullscreen fotogalerie se šipkami a swipe
 const galleryItems = [...document.querySelectorAll(".training-photo")];
