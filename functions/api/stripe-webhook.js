@@ -149,9 +149,9 @@ export async function onRequestPost(context) {
     if (!resendResponse.ok) {
       console.error("Resend error:", resendResult);
 
-      return new Response("Email sending failed", {
-        status: 500,
-      });
+     return new Response(`Resend error: ${resendResult}`, {
+  status: 500,
+});
     }
 
     console.log(
