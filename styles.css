@@ -2219,3 +2219,94 @@ h1 em{font-family:"Playfair Display",serif;font-weight:500}
       rgba(247,242,234,.96) 100%);
   }
 }
+
+
+/* Děkovné okno po úspěšné platbě */
+.payment-success-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 180;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(30, 27, 25, .66);
+  backdrop-filter: blur(12px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .25s ease, visibility .25s ease;
+}
+
+.payment-success-modal.open { opacity: 1; visibility: visible; }
+
+.payment-success-card {
+  position: relative;
+  width: min(590px, 100%);
+  padding: 46px 42px 40px;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background: var(--paper);
+  box-shadow: 0 35px 100px rgba(30, 27, 25, .3);
+  text-align: center;
+  transform: translateY(18px) scale(.98);
+  transition: transform .25s ease;
+}
+
+.payment-success-modal.open .payment-success-card { transform: none; }
+
+.payment-success-icon {
+  display: grid;
+  place-items: center;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: #dff5e9;
+  color: #39785a;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.payment-success-kicker {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--taupe);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+}
+
+.payment-success-card h2 {
+  margin: 0 0 18px;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.35rem, 6vw, 4.1rem);
+  line-height: 1;
+}
+
+.payment-success-card p {
+  max-width: 470px;
+  margin: 0 auto 14px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.payment-success-card .payment-success-wish { margin-top: 20px; }
+.payment-success-signature { display: block; margin: 20px 0 28px; font-family: "Playfair Display", serif; font-size: 1.55rem; }
+.payment-success-back { font: inherit; cursor: pointer; }
+.payment-success-close {
+  position: absolute;
+  top: 13px;
+  right: 18px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .payment-success-card { padding: 40px 24px 30px; border-radius: 24px; }
+  .payment-success-icon { width: 62px; height: 62px; }
+}

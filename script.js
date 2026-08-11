@@ -259,3 +259,46 @@ document.querySelectorAll('a.brand[href="#top"]').forEach((logo) => {
     menuToggle?.setAttribute("aria-expanded", "false");
   });
 });
+
+
+// Děkovné okno po úspěšné platbě ve Stripe
+const paymentSuccessModal = document.querySelector(".payment-success-modal");
+const paymentSuccessClose = document.querySelector(".payment-success-close");
+const paymentSuccessBack = document.querySelector(".payment-success-back");
+
+function cleanPaymentSuccessUrl() {
+  const url = new URL(window.location.href);
+  url.searchParams.delete("payment");
+  const cleanUrl = `${url.pathname}${url.search}${url.hash}`;
+  window.history.replaceState({}, "", cleanUrl || "/");
+}
+
+function closePaymentSuccessModal() {
+  paymentSuccessModal?.classList.remove("open");
+  paymentSuccessModal?.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("menu-open");
+  cleanPaymentSuccessUrl();
+}
+
+const paymentStatus = new URLSearchParams(window.location.search).get("payment");
+if (paymentStatus === "success" && paymentSuccessModal) {
+  paymentSuccessModal.classList.add("open");
+  paymentSuccessModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("menu-open");
+}
+
+paymentSuccessClose?.addEventListener("click", closePaymentSuccessModal);
+paymentSuccessBack?.addEventListener("click", () => {
+  closePaymentSuccessModal();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+paymentSuccessModal?.addEventListener("click", (event) => {
+  if (event.target === paymentSuccessModal) closePaymentSuccessModal();
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && paymentSuccessModal?.classList.contains("open")) {
+    closePaymentSuccessModal();
+  }
+});
