@@ -41,36 +41,6 @@ if ("IntersectionObserver" in window) {
 document.getElementById("year").textContent = new Date().getFullYear();
 
 
-// Modal – tréninkový plán již brzy v prodeji
-const comingSoonButton = document.querySelector(".plan-coming-soon");
-const comingSoonModal = document.querySelector(".coming-soon-modal");
-const comingSoonClose = document.querySelector(".coming-soon-close");
-
-function openComingSoonModal() {
-  comingSoonModal?.classList.add("open");
-  comingSoonModal?.setAttribute("aria-hidden", "false");
-  document.body.classList.add("menu-open");
-}
-
-function closeComingSoonModal() {
-  comingSoonModal?.classList.remove("open");
-  comingSoonModal?.setAttribute("aria-hidden", "true");
-  document.body.classList.remove("menu-open");
-}
-
-comingSoonButton?.addEventListener("click", openComingSoonModal);
-comingSoonClose?.addEventListener("click", closeComingSoonModal);
-
-comingSoonModal?.addEventListener("click", (event) => {
-  if (event.target === comingSoonModal) closeComingSoonModal();
-});
-
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") closeComingSoonModal();
-});
-
-
-
 // V4 – fullscreen fotogalerie se šipkami a swipe
 const galleryItems = [...document.querySelectorAll(".training-photo")];
 const galleryLightbox = document.querySelector(".gallery-lightbox");

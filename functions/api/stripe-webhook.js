@@ -109,36 +109,30 @@ export async function onRequestPost(context) {
       headers: {
         Authorization: `Bearer ${env.RESEND_API_KEY}`,
         "Content-Type": "application/json",
+        "Idempotency-Key": event.id,
       },
       body: JSON.stringify({
-        from: "Daniela Fitness <onboarding@resend.dev>",
+        from: env.RESEND_FROM_EMAIL || "Daniela Fitness <onboarding@resend.dev>",
         to: [customerEmail],
+        reply_to: "tomeckovadaniela@outlook.cz",
         subject: "Tvůj tréninkový plán je tady 💪",
         html: `
-          <div style="font-family:Arial,sans-serif;max-width:600px;margin:auto;color:#2f241f;line-height:1.6">
-            <h1 style="font-size:28px;margin-bottom:20px">
-              Děkuji za objednávku 🤎
-            </h1>
+          <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;color:#2f241f;line-height:1.7;font-size:16px">
+            <p>Ahojky.🎀</p>
 
-            <p>
-              Tvoje platba proběhla úspěšně a tréninkový plán je připravený.
-            </p>
+            <p>Moc děkuji za objednávku, jsem ráda že do toho jdeš se mnou. 😊</p>
 
-            <p>
-              V příloze tohoto e-mailu najdeš testovací verzi
-              <strong>Fitness výzvy na 6 týdnů</strong>.
-            </p>
+            <p>Tréninkový plán najdeš v příloze, věřím že ti pomůže k tomu být silnější a spokojenější ve svém těle. Nemusí být vše perfektní, stačí zůstat konzistentní​​.</p>
 
-            <p>
-              Přeji hodně energie a radosti z tréninku.<br>
-              <strong>Daniela</strong>
-            </p>
+            <p>Kdyby jsi cokoliv potřebovala, neboj se mi napsat.</p>
+
+            <p>Moc se těším na tvé výsledky a držím ti palce, Danča.💗</p>
           </div>
         `,
         attachments: [
           {
-            filename: "fitness-vyzva-test.pdf",
-            path: "https://danca-web.pages.dev/assets/test-plan.pdf"
+            filename: "Treninkovy-plan-6-tydnu-Daniela-Tomeckova.pdf",
+            path: "https://danca-web.pages.dev/assets/fitness-vyzva-6-tydnu.pdf"
           }
         ]
       }),

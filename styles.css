@@ -2310,3 +2310,26 @@ h1 em{font-family:"Playfair Display",serif;font-weight:500}
   .payment-success-card { padding: 40px 24px 30px; border-radius: 24px; }
   .payment-success-icon { width: 62px; height: 62px; }
 }
+
+
+/* Finální obálka tréninkového plánu */
+.plan-cover-official {
+  padding: 0;
+  overflow: hidden;
+  background: transparent;
+  display: block;
+}
+
+.plan-cover-official img {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 760px) {
+  .plan-cover-official {
+    min-height: 430px;
+  }
+}
