@@ -2333,3 +2333,101 @@ h1 em{font-family:"Playfair Display",serif;font-weight:500}
     min-height: 430px;
   }
 }
+
+
+/* FINÁLE – čitelná navigace přes hero + odkaz na tréninkový plán */
+.header {
+  background: rgba(247, 242, 234, .90);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(58, 44, 37, .10);
+  box-shadow: 0 8px 30px rgba(58, 44, 37, .06);
+}
+
+.header.scrolled {
+  background: rgba(247, 242, 234, .96);
+}
+
+.nav {
+  gap: 17px;
+  font-size: .86rem;
+}
+
+.nav a:not(.nav-cta) {
+  position: relative;
+  white-space: nowrap;
+}
+
+.nav a:not(.nav-cta)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: -5px;
+  height: 1px;
+  background: var(--brown);
+  transition: right .22s ease;
+}
+
+.nav a:not(.nav-cta):hover {
+  opacity: 1;
+}
+
+.nav a:not(.nav-cta):hover::after {
+  right: 0;
+}
+
+/* S více položkami přepneme na hamburger o něco dříve, aby se menu nemačkalo. */
+@media (max-width: 1160px) {
+  .nav {
+    position: fixed;
+    inset: 0;
+    z-index: 81;
+    width: 100%;
+    height: 100dvh;
+    padding: 92px 24px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    overflow: hidden;
+    background: var(--cream);
+    font-size: 1.12rem;
+    transform: translateX(100%);
+    transition: transform .3s ease;
+  }
+
+  .nav.open { transform: translateX(0); }
+  .nav::before { display: none; }
+
+  .nav a,
+  .nav a:not(.nav-cta) {
+    width: min(100%, 340px);
+    padding: 7px 12px;
+    text-align: center;
+    line-height: 1.15;
+  }
+
+  .nav a:not(.nav-cta)::after { display: none; }
+
+  .nav .nav-cta {
+    margin-top: 5px;
+    padding: 11px 20px;
+  }
+
+  .menu-toggle {
+    display: block;
+    z-index: 84;
+  }
+
+  .menu-toggle.open span:first-child {
+    top: 21px;
+    transform: rotate(45deg);
+  }
+
+  .menu-toggle.open span:last-child {
+    top: 21px;
+    transform: rotate(-45deg);
+  }
+}

@@ -132,7 +132,7 @@ export async function onRequestPost(context) {
         attachments: [
           {
             filename: "Treninkovy-plan-6-tydnu-Daniela-Tomeckova.pdf",
-            path: "https://danca-web.pages.dev/assets/fitness-vyzva-6-tydnu.pdf"
+            path: "https://danielatomeckova.cz/assets/fitness-vyzva-6-tydnu.pdf"
           }
         ]
       }),
