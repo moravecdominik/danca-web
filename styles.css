@@ -1,14 +1,14 @@
 :root {
-  --cream: #f7f2ea;
-  --cream-2: #eee5da;
-  --paper: #fffdf9;
-  --sand: #d8c4ad;
-  --taupe: #9d826b;
-  --brown: #3a2c25;
-  --ink: #1e1b19;
-  --muted: #756b65;
-  --line: rgba(58, 44, 37, .15);
-  --shadow: 0 28px 80px rgba(58, 44, 37, .14);
+  --cream: #f7f7fb;
+  --cream-2: #eeeaf5;
+  --paper: #ffffff;
+  --sand: #d8cbed;
+  --taupe: #aa94cf;
+  --brown: #6f5b8f;
+  --ink: #29272f;
+  --muted: #716d7b;
+  --line: rgba(111, 91, 143, .16);
+  --shadow: 0 28px 80px rgba(82, 70, 104, .14);
   --radius: 30px;
 }
 
@@ -2429,5 +2429,143 @@ h1 em{font-family:"Playfair Display",serif;font-weight:500}
   .menu-toggle.open span:last-child {
     top: 21px;
     transform: rotate(-45deg);
+  }
+}
+
+
+/* =========================================================
+   FINÁLNÍ KOMPLETNÍ VERZE – levandulová paleta + čitelné menu
+   ========================================================= */
+
+:root {
+  --cream: #f7f7fb;
+  --cream-2: #eeeaf5;
+  --paper: #ffffff;
+  --sand: #d8cbed;
+  --taupe: #aa94cf;
+  --brown: #6f5b8f;
+  --ink: #29272f;
+  --muted: #716d7b;
+  --line: rgba(111, 91, 143, .16);
+  --shadow: 0 28px 80px rgba(82, 70, 104, .14);
+}
+
+html { scroll-behavior: smooth; }
+#plan { scroll-margin-top: 110px; }
+
+.header {
+  background: rgba(247,247,251,.93) !important;
+  border-bottom-color: rgba(111,91,143,.12) !important;
+  box-shadow: 0 8px 30px rgba(82,70,104,.07);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.header.scrolled {
+  background: rgba(247,247,251,.98) !important;
+}
+
+.nav a {
+  color: #29272f !important;
+}
+
+.nav-cta {
+  border-color: #6f5b8f !important;
+}
+
+.nav a:not(.nav-cta)::after {
+  background: #aa94cf !important;
+}
+
+.hero-highlights span {
+  background: rgba(255,255,255,.72);
+  border-color: rgba(111,91,143,.16);
+}
+
+.intro-strip { background: #65577c !important; }
+.intro-strip span { color: #dfd3f0 !important; }
+
+.services { background: #eeeaf5 !important; }
+
+.service-card,
+.qualification-card,
+.nurse-points span,
+.instagram-card {
+  border-color: rgba(111,91,143,.15) !important;
+  background: rgba(255,255,255,.60) !important;
+}
+
+.service-card:hover,
+.qualification-card:hover {
+  background: #fff !important;
+  box-shadow: 0 24px 60px rgba(82,70,104,.13) !important;
+}
+
+.plan-card { background: #5f516f !important; }
+
+.plan-visual {
+  background:
+    radial-gradient(circle at center, rgba(216,203,237,.28), transparent 46%),
+    #342e3c !important;
+}
+
+.plan-copy .eyebrow,
+.check-list li::before { color: #e2d7f0 !important; }
+
+.plan-copy .btn-primary {
+  background: #faf9fc !important;
+  color: #29272f !important;
+}
+
+.price-section { background: #fff !important; }
+
+.price-panel {
+  background: #f7f7fb !important;
+  border-color: rgba(111,91,143,.14) !important;
+}
+
+.price-panel-dark { background: #65577c !important; }
+.price-panel-dark .price-kicker { color: #e1d5ef !important; }
+
+.references { background: #554963 !important; }
+.references .eyebrow,
+.reference-stars { color: #ddd0ef !important; }
+
+.reference-card {
+  border-color: rgba(255,255,255,.15) !important;
+  background: rgba(255,255,255,.055) !important;
+}
+
+.contact-section { background: #eeeaf5 !important; }
+.footer { background: #29272f !important; }
+
+.btn-primary { background: #6f5b8f !important; }
+.btn-primary:hover { background: #624f80 !important; }
+
+.btn-secondary {
+  background: rgba(255,255,255,.58) !important;
+  border-color: rgba(111,91,143,.18) !important;
+}
+
+.btn-dark { background: #3c3745 !important; }
+
+.payment-success-modal { background: rgba(41,39,47,.66) !important; }
+
+.payment-success-card {
+  background: #fff !important;
+  border-color: rgba(111,91,143,.16) !important;
+  box-shadow: 0 35px 100px rgba(60,50,78,.28) !important;
+}
+
+.payment-success-icon {
+  background: #eee8f7 !important;
+  color: #725c99 !important;
+}
+
+.payment-success-kicker { color: #9479bd !important; }
+
+@media (max-width: 1160px) {
+  .nav {
+    background: #f7f7fb !important;
   }
 }

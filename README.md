@@ -20,3 +20,20 @@ Nasazení:
 - fotografie v hero je nahoře ostrá a směrem dolů se rozostřuje a zesvětluje
 - celý hlavní nadpis je černý
 - upraven úvodní text dle nové formulace
+
+
+
+FINÁLNÍ KOMPLETNÍ VERZE
+- zachována Stripe / webhook / Resend / PDF logika beze změn
+- levandulová / bílá / šedá paleta
+- čitelnější horní navigace
+- položka Tréninkový plán -> #plan
+- Open Graph metadata pro náhledy odkazů
+- odkazy přepsané na -v2 názvy fotek:
+  about-daniela-v2.webp
+  fitness-back-v2.webp
+  training-cable-v2.webp
+  training-lunge-v2.webp
+
+DŮLEŽITÉ:
+Tyto nové -v2 soubory musí být fyzicky přítomné ve stejné složce assets/images.
