@@ -2619,3 +2619,123 @@ html { scroll-behavior: smooth; }
   letter-spacing: inherit !important;
 }
 
+
+
+/* === FINÁLNÍ HERO: samostatná fotografie + obsah pod ní === */
+.hero.hero-stacked {
+  display: flex !important;
+  flex-direction: column !important;
+  width: min(1440px, calc(100% - 32px)) !important;
+  max-width: 1440px !important;
+  margin: 24px auto 0 !important;
+  gap: 0 !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+  min-height: 0 !important;
+}
+
+.hero.hero-stacked .hero-media {
+  position: relative !important;
+  inset: auto !important;
+  width: 100% !important;
+  height: clamp(390px, 56vw, 720px) !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+  border-radius: 32px !important;
+  order: 1 !important;
+}
+
+.hero.hero-stacked .hero-media::before,
+.hero.hero-stacked .hero-media::after {
+  display: none !important;
+  content: none !important;
+}
+
+.hero.hero-stacked .hero-media img {
+  position: static !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  opacity: 1 !important;
+  filter: none !important;
+  transform: none !important;
+}
+
+.hero.hero-stacked .hero-copy {
+  position: relative !important;
+  z-index: 1 !important;
+  order: 2 !important;
+  width: min(920px, 100%) !important;
+  max-width: 920px !important;
+  margin: 0 auto !important;
+  padding: clamp(42px, 6vw, 76px) 24px clamp(44px, 6vw, 72px) !important;
+  text-align: center !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+.hero.hero-stacked .eyebrow {
+  text-align: center !important;
+}
+
+.hero.hero-stacked h1,
+.hero.hero-stacked h1 em,
+.hero.hero-stacked h1 span {
+  font-family: inherit !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  text-align: center !important;
+}
+
+.hero.hero-stacked h1 {
+  max-width: 900px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.hero.hero-stacked .hero-text {
+  max-width: 760px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
+
+.hero.hero-stacked .hero-actions,
+.hero.hero-stacked .hero-highlights {
+  justify-content: center !important;
+}
+
+@media (max-width: 700px) {
+  .hero.hero-stacked {
+    width: calc(100% - 20px) !important;
+    margin-top: 12px !important;
+  }
+
+  .hero.hero-stacked .hero-media {
+    height: 62vh !important;
+    min-height: 430px !important;
+    max-height: 620px !important;
+    border-radius: 24px !important;
+  }
+
+  .hero.hero-stacked .hero-media img {
+    object-position: center center !important;
+  }
+
+  .hero.hero-stacked .hero-copy {
+    padding: 34px 12px 48px !important;
+  }
+
+  .hero.hero-stacked h1 {
+    line-height: 1.04 !important;
+  }
+
+  .hero.hero-stacked .hero-actions {
+    align-items: stretch !important;
+  }
+}
