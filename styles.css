@@ -2739,3 +2739,135 @@ html { scroll-behavior: smooth; }
     align-items: stretch !important;
   }
 }
+
+
+/* =========================================================
+   HERO FINAL 2
+   Samostatná fotografie nahoře, čistý text pod ní.
+   Žádná fotografie v pozadí textu.
+   ========================================================= */
+
+.hero.hero-clean {
+  display: flex !important;
+  flex-direction: column !important;
+  width: min(1180px, calc(100% - 32px)) !important;
+  max-width: 1180px !important;
+  margin: 28px auto 0 !important;
+  padding: 0 !important;
+  gap: 0 !important;
+  min-height: 0 !important;
+  background: transparent !important;
+  background-image: none !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+}
+
+/* odstranění případných starých overlayů / pseudo-elementů */
+.hero.hero-clean::before,
+.hero.hero-clean::after,
+.hero.hero-clean .hero-copy::before,
+.hero.hero-clean .hero-copy::after {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+}
+
+/* samostatná fotografie */
+.hero.hero-clean .hero-photo {
+  width: min(760px, 100%) !important;
+  margin: 0 auto !important;
+  display: block !important;
+  position: relative !important;
+  overflow: hidden !important;
+  border-radius: 30px !important;
+  background: transparent !important;
+  box-shadow: 0 22px 55px rgba(82, 70, 104, .12) !important;
+}
+
+.hero.hero-clean .hero-photo img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  opacity: 1 !important;
+  filter: none !important;
+  transform: none !important;
+}
+
+/* čistá textová část POD fotkou */
+.hero.hero-clean .hero-copy {
+  width: min(900px, 100%) !important;
+  max-width: 900px !important;
+  margin: 0 auto !important;
+  padding: clamp(38px, 6vw, 68px) 22px clamp(46px, 6vw, 72px) !important;
+  position: static !important;
+  background: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  text-align: center !important;
+}
+
+.hero.hero-clean .eyebrow {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* celý nadpis stejným písmem a bez kurzívy */
+.hero.hero-clean h1,
+.hero.hero-clean h1 em,
+.hero.hero-clean h1 span {
+  font-family: inherit !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  text-align: center !important;
+  letter-spacing: inherit !important;
+}
+
+.hero.hero-clean h1 {
+  max-width: 900px !important;
+  margin: 0 auto 24px !important;
+  line-height: .98 !important;
+}
+
+.hero.hero-clean .hero-text {
+  max-width: 760px !important;
+  margin: 0 auto 30px !important;
+  text-align: center !important;
+}
+
+.hero.hero-clean .hero-actions,
+.hero.hero-clean .hero-highlights {
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+@media (max-width: 760px) {
+  .hero.hero-clean {
+    width: calc(100% - 20px) !important;
+    margin-top: 14px !important;
+  }
+
+  .hero.hero-clean .hero-photo {
+    width: min(560px, 100%) !important;
+    border-radius: 24px !important;
+  }
+
+  .hero.hero-clean .hero-copy {
+    padding: 32px 10px 48px !important;
+  }
+
+  .hero.hero-clean h1 {
+    line-height: 1.02 !important;
+  }
+
+  .hero.hero-clean .hero-actions {
+    width: 100% !important;
+  }
+}
